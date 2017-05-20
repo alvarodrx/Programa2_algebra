@@ -15,18 +15,17 @@ import javax.swing.JScrollPane;
  *
  * @author alvar_000
  */
-public class Dibujar2D extends JPanel{
+public class PlanoCartesiano extends JPanel{
     Graphics g;
     Linea l;
 
-    Dibujar2D() {
+    PlanoCartesiano() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     @Override
     protected void paintComponent(Graphics g){
         g = dibujarPlano(g);
-        g = dibujarLinea(g);
         this.setAutoscrolls(true);
         this.g = g;
         
@@ -35,7 +34,7 @@ public class Dibujar2D extends JPanel{
     
    
 
-    public Dibujar2D(Linea l) {
+    public PlanoCartesiano(Linea l) {
         this.l = l;
         
     }
@@ -49,12 +48,12 @@ public class Dibujar2D extends JPanel{
         
         for(int i = 0; i <= 300; i+=30){
             g.setColor(Color.red);
-            for(int j = 0; j <= 300; j+=5){
+            for(int j = 0; j <= 300; j+=6){
                 g.drawLine(j, i, j+1, i);
             }
             
             g.setColor(Color.blue);
-            for(int j = 0; j <= 300; j+=5){
+            for(int j = 0; j <= 300; j+=6){
                 g.drawLine(i,j,i,j+1);
             }
             
